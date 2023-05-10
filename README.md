@@ -8,3 +8,5 @@
 ```java
 CircleRect.drawCircleRect(10, 10, 100, 30, (float) (System.currentTimeMillis() - startTime) / 1000, 0xFFFFFFFF);
 ```
+
+#### マウスの位置の記憶は自分でやってください。面倒くさいです
