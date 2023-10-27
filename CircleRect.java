@@ -1,10 +1,7 @@
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 public class CircleRect {
-    public static float PI = 3.14159265358979323846F; // = (float) Math.PI
-
     public static void drawRectCircle(float x, float y, float width, float height, float value, int color) {
         float radius = Math.max(width / 2F, height / 2F);
 
@@ -15,8 +12,8 @@ public class CircleRect {
         GlStateManager.color((color >> 16 & 0xFF) / 255.0F, (color >> 8 & 0xFF) / 255.0F, (color & 0xFF) / 255.0F, (color >> 24 & 0xFF) / 255.0F);
         GL11.glBegin(GL11.GL_POLYGON);
         for (int i = 0; i <= 360; i++) {
-            float xRadius = MathHelper.sin(i * CircleRect.PI / 180F) * (radius * value);
-            float yRadius = MathHelper.cos(i * CircleRect.PI / 180F) * (radius * value);
+            float xRadius = Math.sin(Math.toRadians(i)) * (radius * value);
+            float yRadius = Math.cos(Math.toRadians(i)) * (radius * value);
             if (0 >= xRadius) {
                 xRadius = Math.max(xRadius, -(width / 2F));
             } else {
