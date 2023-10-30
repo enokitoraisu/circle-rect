@@ -12,8 +12,8 @@ public class CircleRect {
         GlStateManager.color((color >> 16 & 0xFF) / 255.0F, (color >> 8 & 0xFF) / 255.0F, (color & 0xFF) / 255.0F, (color >> 24 & 0xFF) / 255.0F);
         GL11.glBegin(GL11.GL_POLYGON);
         for (int i = 0; i <= 360; i++) {
-            float xRadius = Math.sin(Math.toRadians(i)) * (radius * value);
-            float yRadius = Math.cos(Math.toRadians(i)) * (radius * value);
+            float xRadius = (float) Math.sin(Math.toRadians(i)) * (radius * value);
+            float yRadius = (float) Math.cos(Math.toRadians(i)) * (radius * value);
             if (0 >= xRadius) {
                 xRadius = Math.max(xRadius, -(width / 2F));
             } else {
